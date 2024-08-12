@@ -1,0 +1,117 @@
+nav {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  @include gradientBackground;
+  box-shadow: 0 1rem 1rem rgba($color-colors-fixed-black, 0.1);
+
+  &.window-scroll {
+    background: $color-colors-fixed-white;
+    .container {
+      button {
+        color: $dark-blue-text;
+      }
+      a {
+        color: $dark-blue-text;
+
+        & > h1 {
+          color: $dark-blue-text;
+        }
+
+        &.btn {
+          color: $dark-blue-text;
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    /* only needed in medium andd small venues */
+    button {
+      display: none;
+    }
+
+    a {
+      color: $color-colors-fixed-white;
+      font-weight: $regular-weigth;
+      font-size: 0.9rem;
+    }
+
+    .nav__logo h3 {
+      color: $color-colors-fixed-white;
+    }
+  }
+}
+
+/* ========== MEDIUM DEVICES ========== */
+@media screen and (max-width: 1024px) {
+  nav {
+    .container {
+      button {
+        display: inline-block;
+        background: transparent;
+        color: $color-colors-fixed-white;
+        font-size: 2rem;
+        cursor: pointer;
+
+        &#close__nav-btn {
+          display: none;
+          position: absolute;
+          top: 17%;
+          right: -34px;
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.03);
+          justify-content: center;
+          align-items: center;
+          transform: translatex(-100%);
+          cursor: pointer;
+          transition: transform 0.4s ease-in-out 0.2s;
+        }
+      }
+
+      ul {
+        height: 100vh;
+        width: 320px;
+        padding-top: 6rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: $color-brand-2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        display: none;
+        //transform: translatex(10%);
+        //transition: transform 0.4s ease-in-out;
+
+        li {
+          width: 100%;
+
+          a {
+            color: $color-colors-fixed-white;
+            height: 100%;
+            display: block;
+            padding: 1.5rem 2rem;
+            border-radius: 0;
+            background: $color-brand-2;
+          }
+        }
+      }
+    }
+  }
+}

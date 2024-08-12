@@ -1,0 +1,44 @@
+#about {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: lighten($color: $color-brand-1, $amount: 50%);
+
+  .container {
+    display: grid;
+    grid-template-columns: 46% 46%;
+    gap: 8%;
+    align-items: center;
+    justify-content: space-between;
+
+    .about_content {
+      h3 {
+        font-size: $heading-4;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        font-weight: $light-weigth;
+        color: $dark-blue-text;
+      }
+
+      p,
+      ul {
+        margin: 1rem 0 2rem;
+        color: $color-grey-scale-grey-2;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #about {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0%;
+      .about__image {
+        order: -1;
+        margin: 0;
+      }
+    }
+  }
+}
